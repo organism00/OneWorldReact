@@ -60,7 +60,7 @@ function LandingPage() {
         <div className=" flex flex-col my-10 space-y-3 px-20 mx-auto container max-w-[1200px]:">
             <p className="text-2xl font-semibold opacity-85">Browse by Categories</p>
         </div>
-        <div className="flex flex-col flex-wrap gap-4 px-5 rounded-sm b">
+        <div className="flex flex-col md:flex-row justify-center flex-wrap gap-4 px-5 rounded-sm b">
           {allCat.map((item) => (
             <div key={item.id} className="overflow-hidden flex flex-col items-center justify-center  border w-[100%] md:w-36 rounded-lg shadow-xl lg:hover:scale-110 transition-all duration-500 ease-in-out" onClick={() => navigate(`/products?category=${item.title}`)}>
               <div className="h-auto lg:h-28 w-[100%] flex items-center justify-center overflow-hidden">
