@@ -62,7 +62,7 @@ function LandingPage() {
         </div>
         <div className="flex flex-col md:flex-row justify-center flex-wrap gap-4 px-5 rounded-sm b">
           {allCat.map((item) => (
-            <div key={item.id} className="overflow-hidden flex flex-col items-center justify-center  border w-[100%] md:w-36 rounded-lg shadow-xl lg:hover:scale-110 transition-all duration-500 ease-in-out" onClick={() => navigate(`/products?category=${item.title}`)}>
+            <div key={item.id} className="overflow-hidden cursor-pointer flex flex-col items-center justify-center  border w-[100%] md:w-36 rounded-lg shadow-xl lg:hover:scale-110 transition-all duration-500 ease-in-out" onClick={() => navigate(`/products?category=${item.title}`)}>
               <div className="h-auto lg:h-28 w-[100%] flex items-center justify-center overflow-hidden">
                 <img src={item.img} alt="img" className="w-[70%] object-cover "/>
               </div>
@@ -101,7 +101,7 @@ function LandingPage() {
               <button className="bg-blue-500 text-white w-[150px] py-2 rounded-sm lg:hover:scale-105 transition-all duration-700 ease-in-out">check it out</button>
             </div>
             <div className="w-full lg:w-1/2">
-              <img src={cat7} alt="img" className="object-cover w-full lg:hover:scale-125 transition-all duration-500 ease-in-out"/>
+              <img src={cat7} alt="img" className="object-cover w-full lg:hover:scale-110 transition-all duration-500 ease-in-out"/>
             </div>
           </div>
         </div>
@@ -113,7 +113,7 @@ function LandingPage() {
           <p className="text-2xl font-semibold my-5 opacity-85">All Categories</p>
           <div className="flex flex-col justify-center flex-wrap gap-10 sm:flex-row">
             {allProducts.map((item) => (
-              <div key={item.id} className=" w-[100%] lg:w-60 overflow-hidden rounded-md shadow-md border lg:hover:scale-105 transition-all duration-500 ease-in-out flex flex-col items-center">
+              <div key={item.id} className=" w-[100%] lg:w-60 overflow-hidden rounded-md shadow-md border cursor-pointer lg:hover:scale-105 transition-all duration-500 ease-in-out flex flex-col items-center">
                 <div className="h-44 w-[100%] flex items-center justify-center overflow-hidden">
                   <img src={item.img} alt="" className="w-[45%] py-6 object-cover rounded-t-2xl"/>
                 </div>

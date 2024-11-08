@@ -32,7 +32,7 @@ function SortedProductDisplay() {
           {sortedCategory.length > 0 ? (
             <div className="flex flex-col justify-center flex-wrap gap-10 sm:flex-row ">
               {sortedCategory.map((product) => (
-                <div key={product.id} className=" w-[100%] lg:w-60 overflow-hidden rounded-md shadow-md border lg:hover:scale-105 transition-all duration-500 ease-in-out flex flex-col items-center">
+                <div key={product.id} className="cursor-pointer w-[100%] lg:w-60 overflow-hidden rounded-md shadow-md border lg:hover:scale-105 transition-all duration-500 ease-in-out flex flex-col items-center">
                   <div className="h-60 lg:h-44 w-[100%] flex items-center justify-center overflow-hidden">
                     <img src={product.img} alt="" className="w-[45%] py-6 object-cover rounded-md"/>
                   </div>
