@@ -60,10 +60,10 @@ function LandingPage() {
         <div className=" flex flex-col my-10 space-y-3 px-20 mx-auto container max-w-[1200px]:">
             <p className="text-2xl font-semibold opacity-85">Browse by Categories</p>
         </div>
-        <div className="flex flex-col md:flex-row justify-center flex-wrap gap-4 px-5 rounded-sm b">
+        <div className="flex flex-col md:flex-row justify-center flex-wrap gap-4 px-10 rounded-sm b">
           {allCat.map((item) => (
-            <div key={item.id} className="overflow-hidden cursor-pointer flex flex-col items-center justify-center  border w-[100%] md:w-36 rounded-lg shadow-xl lg:hover:scale-110 transition-all duration-500 ease-in-out" onClick={() => navigate(`/products?category=${item.title}`)}>
-              <div className="h-auto lg:h-28 w-[100%] flex items-center justify-center overflow-hidden">
+            <div key={item.id} className="overflow-hidden cursor-pointer flex flex-col gap-6 items-center justify-center  border w-[100%] p-4 md:w-36 rounded-lg shadow-lg lg:hover:scale-110 transition-all duration-500 ease-in-out" onClick={() => navigate(`/products?category=${item.title}`)}>
+              <div className=" lg:h-20 w-[100%] flex items-center justify-center overflow-hidden">
                 <img src={item.img} alt="img" className="w-[70%] object-cover "/>
               </div>
               <div className="w-[100%] h-10 flex items-center justify-center">
@@ -113,7 +113,7 @@ function LandingPage() {
           <p className="text-2xl font-semibold my-5 opacity-85">All Categories</p>
           <div className="flex flex-col justify-center flex-wrap gap-10 sm:flex-row">
             {allProducts.map((item) => (
-              <div key={item.id} className=" w-[100%] lg:w-60 overflow-hidden rounded-md shadow-md border cursor-pointer lg:hover:scale-105 transition-all duration-500 ease-in-out flex flex-col items-center">
+              <div key={item.id} className=" w-[100%] lg:w-60 overflow-hidden rounded-md shadow-md border cursor-pointer lg:hover:scale-105 transition-all duration-500 ease-in-out flex flex-col items-center" onClick={() => navigate(`/productdetails/?product-id=${item.id}`)}>
                 <div className="h-44 w-[100%] flex items-center justify-center overflow-hidden">
                   <img src={item.img} alt="" className="w-[45%] py-6 object-cover rounded-t-2xl"/>
                 </div>

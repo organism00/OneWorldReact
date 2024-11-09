@@ -7,6 +7,7 @@ import { MdOutlineShoppingCart } from "react-icons/md";
 import { FaRegHeart } from "react-icons/fa";
 import { IoSearch } from "react-icons/io5";
 import { TiThMenu } from "react-icons/ti";
+import logo from '../Asset/images/logo.png'
 
 
 
@@ -17,8 +18,9 @@ function Navbar() {
     <div>
       <nav className="text-black container items-center font-pop z-50 flex justify-center w-[100%] lg:my-4 fixed ">
         <div className="flex items-center bg-secondary justify-between mx-auto container  py-4 px-4 max-w-[1087px] shadow-xl lg:rounded-lg">
-          <div className="">
-            <h1 className="font-poppins font-semibold text-2xl">oneWorld</h1>
+          <div className="flex items-center">
+            <img src={logo} alt="logo" className="w-[50px]" />
+            <h1>oneWorld</h1>
           </div>
           <div className="space-x-5 items-center hidden lg:flex">
             <Link to="">Pages</Link>

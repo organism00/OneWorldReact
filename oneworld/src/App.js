@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 // Components
 import LandingPage from './Pages/LandingPage';
 import SortedProductDisplay from './Products/SortedProductDisplay';
+import ProductDetails from './Products/ProductDetails';
+import Signup from './Auth/Signup';
 
 function App() {
   return (
@@ -13,6 +15,8 @@ function App() {
         <Routes>
           <Route path="/" element={<LandingPage/>} />
           <Route path="/products" element={<SortedProductDisplay/>} />
+          <Route path="/productdetails" element={<ProductDetails/>} />
+          <Route path="/signup" element={<Signup/>} />
         </Routes>
       </Router>
 
