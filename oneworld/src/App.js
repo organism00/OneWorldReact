@@ -12,6 +12,8 @@ import OrderStatus from './Orders/OrderStatus';
 
 // Admin
 import Dashboard from './Admin/Dashboard';
+import AddProduct from './Admin/ManageProduct/AddProduct';
+import ViewProducts from './Admin/ManageProduct/ViewProducts'
 
 function App() {
   return (
@@ -29,6 +31,8 @@ function App() {
 
           {/* Admin */}
           <Route path="/admin/dashboard" element={<Dashboard/>} />
+          <Route path="/admin/dashboard/addProduct" element={<AddProduct/>} />
+          <Route path="/admin/dashboard/viewProduct" element={<ViewProducts/>} />
         </Routes>
       </Router>
 

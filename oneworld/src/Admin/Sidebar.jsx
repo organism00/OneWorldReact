@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import {Link} from 'react-router-dom'
 import { FaTachometerAlt, FaExchangeAlt, FaPlus, FaMoneyBillWave, FaChartLine, FaCog, FaQuestionCircle, FaSignOutAlt, FaSun, FaMoon } from 'react-icons/fa';
 import { IoMdArrowDropdown, IoMdArrowDropright } from 'react-icons/io';
 import '../Styles/customScrollbar.css';
@@ -13,7 +14,7 @@ const Sidebar = () => {
 
   return (
     <div className="flex h-screen bg-gray-100 md:grid md:grid-cols-[16rem_1fr]">
-      <aside className="customScrollbar w-60 bg-red-500 text-white flex flex-col fixed h-screen overflow-y-auto">
+      <aside className="customScrollbar w-60 bg-primary text-white flex flex-col fixed h-screen overflow-y-auto">
         {/* Logo */}
         <div className="flex items-center space-x-3 p-4 border-b border-gray-700">
           <img src={logo} alt="Logo" className="w-10 h-10 rounded-full bg-white p-1" />
@@ -24,9 +25,8 @@ const Sidebar = () => {
         <nav className="flex-grow p-4">
           <ul className="space-y-2">
             {/* Dashboard */}
-            <li className="flex items-center p-2 rounded-lg hover:bg-gray-700 transition-colors">
-              <FaTachometerAlt className="mr-3" />
-              <span>Dashboard</span>
+            <li>
+              <Link to={'/admin/dashboard'} className="flex items-center p-2 rounded-lg hover:bg-gray-700 transition-colors"><FaTachometerAlt className="mr-3" /> Dashboard</Link>
             </li>
 
             {/* Products with Sub-menu */}
@@ -43,11 +43,11 @@ const Sidebar = () => {
               </div>
               {isDropdownOpen && (
                 <ul className="pl-10 mt-2 space-y-1">
-                  <li className="p-2 rounded-lg hover:bg-gray-700 transition-colors">
-                    <a href="landingPage.html">Add Products</a>
+                  <li className="p-2 rounded-lg hover:bg-gray-700 transition-colors duration-600">
+                    <Link to="/admin/dashboard/addProduct">Add Products</Link>
                   </li>
-                  <li className="p-2 rounded-lg hover:bg-gray-700 transition-colors">
-                    <a href="test.html">View Products</a>
+                  <li className="p-2 rounded-lg hover:bg-gray-700 transition-colors duration-600">
+                    <Link to="/admin/dashboard/viewProduct">View Products</Link>
                   </li>
                 </ul>
               )}
