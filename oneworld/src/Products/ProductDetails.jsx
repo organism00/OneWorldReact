@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 // import '../fontawesome/css/all.css';
 // import '../output.css';
 
@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { FaStar } from "react-icons/fa6";
 import { FaRegStarHalfStroke } from "react-icons/fa6";
+import { MdOutlineShoppingCart } from "react-icons/md";
 // import { FaRegStar } from "react-icons/fa6";
 
 // Images
@@ -40,6 +41,7 @@ const selectedProducts = [
 ]
 
 const ProductDetails = () => {
+  const navigate = useNavigate();
   const [mainImageSrc, setMainImageSrc] = useState(bag1);
   const images = [bag1, bag3];
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -59,12 +61,32 @@ const ProductDetails = () => {
     setCurrentImageIndex(prevIndex);
     setMainImageSrc(images[prevIndex]);
   };
+  const handleAddToCart = (e) => {
+    e.preventDefault();
+    navigate('/cart');
+    // alert('Product added to cart successfully.');
+  }
+  // const [cartQuantity, setCartQuantity] = useState(1);
+
+  // const handleQuantityChange = (sign) => {
+  //   if (sign === '-') {
+  //     setCartQuantity(cartQuantity - 1);
+  //     console.log(cartQuantity);
+  //     if (cartQuantity === 0) {
+  //       setCartModal(false);
+  //     }
+  //   } else {
+  //     setCartQuantity(cartQuantity + 1);
+  //   }
+  // }
 
   return (
     <div className="bg-gray-50 font-sans">
-      <Navbar/>
+      <div className="sticky top-0 z-50">
+        <Navbar/>
+      </div>
       
-      <div className="py-24">
+      <div className="py-18">
         <div className='flex flex-col lg:flex-row items-center justify-center gap-6'>
           <div className="flex flex-col gap-6 items-center justify-center lg:h-[555px] w-[100%] lg:w-[500px] relative">
             <div className="h-[250px] w-[250px] rounded-[50%] bg-yellow-300 absolute top-10 lg:top-16 left-5 lg:left-10 z-0 "></div>
@@ -94,9 +116,20 @@ const ProductDetails = () => {
               <p className="text-gray-600 font-semibold ml-2">(45 Reviews)</p>
             </div>
             <p className="text-2xl font-bold mt-3">$120 <Link to="#" className="ml-2 text-black text-xl font-semibold">Free shipping worldwide</Link></p>
-            <button className="mt-6 bg-red-600 text-white px-6 py-3 rounded-full">
-              <i className="fa-solid fa-cart-shopping"></i> Add To Cart
-            </button>
+            <div>
+              <button className="mt-6 bg-red-600 text-white px-6 py-3 rounded-full flex items-center gap-2" onClick={handleAddToCart}>
+                <MdOutlineShoppingCart/> Add To Cart
+              </button>
+              {/* {cartModal && (
+                <div className='rounded-lg border p-3 w-32 mt-4'>
+                  <div className='flex justify-between'>
+                    <button className='bg-primary text-white w-6 h-6 rounded-full' onClick={(e) => handleQuantityChange('-')}>-</button>
+                    <span>{cartQuantity}</span>
+                    <button className='bg-primary text-white w-6 h-6 rounded-full' onClick={(e) => handleQuantityChange('+')}>+</button>
+                  </div>
+                </div>
+              )} */}
+            </div>
             <div className="mt-6">
               <p className="text-gray-600">Product Code: SKU 12345678</p>
               <p className="mt-2 text-gray-600">

@@ -14,7 +14,9 @@ function SortedProductDisplay() {
 
   return (
     <div>
-      <Navbar />
+      <div className="sticky top-0 z-50">
+        <Navbar />
+      </div>
 
       <div className='flex justify-center'>
         <div className="bg-white w-[100%] mx-5 md:mx-10 lg:mx-auto lg:max-w-[1087px] pt-16 py-10 flex flex-col justify-center items-center ">

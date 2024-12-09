@@ -31,7 +31,10 @@ function LandingPage() {
 
   return (
     <div>
-      <Navbar/>
+      <div className="sticky top-0 z-50">
+        <Navbar/>
+      </div>
+
       <div className="bg-primary h-[110vh] w-[100%] flex items-center justify-center ">
         <div className="flex flex-col gap-10 lg:flex-row justify-center items-center max-w-[1087px] ">
           <div className="flex flex-col space-y-6 px-4">

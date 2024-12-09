@@ -9,6 +9,8 @@ import Signup from './Auth/Signup';
 
 // Orders
 import OrderStatus from './Orders/OrderStatus';
+import Cart from './Cart/Cart';
+import Checkout from './Cart/Checkout';
 
 // Admin
 import Dashboard from './Admin/Dashboard';
@@ -28,6 +30,8 @@ function App() {
 
           {/* Orders */}
           <Route path="/orderstatus" element={<OrderStatus/>} />
+          <Route path="/cart" element={<Cart/>} />
+          <Route path="/checkout/summary" element={<Checkout/>} />
 
           {/* Admin */}
           <Route path="/admin/dashboard" element={<Dashboard/>} />
